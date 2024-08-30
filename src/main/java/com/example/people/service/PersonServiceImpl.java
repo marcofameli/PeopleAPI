@@ -25,9 +25,12 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonResponseDTO findById(Long id) {
-        Person person = returnPerson(id);
-
-        return personMapper.toPersonDTO(person);
+        try {
+            Person person = returnPerson(id);
+            return personMapper.toPersonDTO(person);
+        } catch (Exception e) {
+            throw new RuntimeException("Id não encontrado");
+        }
 
     }
 

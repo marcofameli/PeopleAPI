@@ -18,4 +18,14 @@ public class PersonResponseDTO {
         this.age = person.getAge();
 
     }
+
+    @Override
+    public String toString() {
+        return "PersonResponseDTO{" +
+                "age=" + age +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }
